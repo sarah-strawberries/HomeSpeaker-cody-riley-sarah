@@ -4,5 +4,6 @@
       "commandName": "Project",
       "nativeDebugging": false
     }
-  }
+  },
+  "ServerAddress": "http://localhost:5000"
 }
