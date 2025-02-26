@@ -1,30 +1,67 @@
 ﻿using HomeSpeaker.Shared;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace HomeMaui.ViewModels;
 
 public class SongViewModel : INotifyPropertyChanged
 {
     public int SongId { get; set; }
-    public required string Name { get; init; }
+
+    private string name;
+    public required string Name { 
+        get => name;
+        set {
+            if (name != value) {
+                name = value;
+                OnPropertyChanged();    
+            }
+        } 
+    }
+
     private string? path;
     public string? Path
     {
         get => path;
-        set
-        {
+        set {
             path = value;
             if (path?.Contains('\\') ?? false)
                 Folder = System.IO.Path.GetDirectoryName(path.Replace('\\', '/'));
             else
                 Folder = System.IO.Path.GetDirectoryName(path);
+            OnPropertyChanged();
         }
     }
-    public required string Album { get; init; }
-    public required string Artist { get; init; }
+
+    private string album;
+    public required string Album { 
+        get => album;
+        set {
+            if (album != value) {
+                album = value;
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    private string artist;
+    public required string Artist { 
+        get => artist;
+        set {
+            if (artist != value) {
+                artist = value;
+                OnPropertyChanged();
+            }
+        }
+    }
     public string? Folder { get; private set; }
 
     public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }
 
 public partial class SongGroup : List<SongViewModel>
