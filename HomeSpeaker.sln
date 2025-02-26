@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeSpeaker.BlazorMaui", "HomeSpeaker.BlazorMaui\HomeSpeaker.BlazorMaui.csproj", "{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeMaui", "HomeMaui\HomeMaui.csproj", "{07498B4C-4780-4340-BFE0-5D83819DFBAF}"
 EndProject
 Global
@@ -36,13 +34,9 @@ Global
 		{72E636EC-4188-479E-9FCE-6B7EC1EF9339}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72E636EC-4188-479E-9FCE-6B7EC1EF9339}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72E636EC-4188-479E-9FCE-6B7EC1EF9339}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2BDF495F-2A14-4FDE-8E9F-BEE245C0C63D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07498B4C-4780-4340-BFE0-5D83819DFBAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{07498B4C-4780-4340-BFE0-5D83819DFBAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07498B4C-4780-4340-BFE0-5D83819DFBAF}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{07498B4C-4780-4340-BFE0-5D83819DFBAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07498B4C-4780-4340-BFE0-5D83819DFBAF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
