@@ -1,8 +1,9 @@
 ﻿using HomeSpeaker.Shared;
+using System.ComponentModel;
 
 namespace HomeMaui.ViewModels;
 
-public class SongViewModel
+public class SongViewModel : INotifyPropertyChanged
 {
     public int SongId { get; set; }
     public required string Name { get; init; }
@@ -22,6 +23,8 @@ public class SongViewModel
     public required string Album { get; init; }
     public required string Artist { get; init; }
     public string? Folder { get; private set; }
+
+    public event PropertyChangedEventHandler? PropertyChanged;
 }
 
 public partial class SongGroup : List<SongViewModel>

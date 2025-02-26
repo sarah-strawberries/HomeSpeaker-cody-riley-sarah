@@ -36,5 +36,8 @@
         Title="Streams"
         ContentTemplate="{DataTemplate views:Streams}"
         Route="Streams" />
-
+    <ShellContent
+        Title="Temporary link to song page"
+        ContentTemplate="{DataTemplate views:SongPage}"
+        Route="SongPage" />
 </Shell>

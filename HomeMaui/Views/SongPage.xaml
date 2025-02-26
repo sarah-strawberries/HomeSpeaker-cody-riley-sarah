@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HomeMaui.Views.SongPage"
+             Title="{Binding Name}">
+    <VerticalStackLayout>
+        <Label 
+            Text="{Binding Name, StringFormat='Metadata for {0}'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <StackLayout x:Name="SongTitleEntryAndLabel"
+            Orientation="Horizontal"
+            HorizontalOptions="Center" >
+            <Label x:Name="SongTitle"
+                Text="Song Title:"
+                VerticalOptions="Center"
+                Padding="10"
+                />
+            <Entry WidthRequest="350"
+                Text="{Binding Name}"
+                VerticalOptions="Center" 
+                HorizontalOptions="FillAndExpand"
+                AutomationProperties.LabeledBy="{Binding Source={x:Reference SongTitle}}"
+                Placeholder="{Binding Name}"
+                />
+        </StackLayout>
+
+        <StackLayout x:Name="AlbumEntryAndLabel"
+            Orientation="Horizontal"
+            HorizontalOptions="Center">
+            <Label x:Name="SongAlbum"
+                Text="Album:"
+                VerticalOptions="Center"
+                Padding="10"
+                />
+            <Entry WidthRequest="350"
+                Text="{Binding Album}"
+                Placeholder="{Binding Album}"
+                VerticalOptions="Center" 
+                HorizontalOptions="FillAndExpand"
+                AutomationProperties.LabeledBy="{Binding Source={x:Reference SongAlbum}}"
+                />
+        </StackLayout>
+
+        <StackLayout x:Name="ArtistEntryAndLabel"
+            Orientation="Horizontal"
+            HorizontalOptions="Center">
+            <Label x:Name="SongArtist"
+                Text="Artist:"
+                VerticalOptions="Center"
+                Padding="10"
+                />
+            <Entry WidthRequest="350"
+                Text="{Binding Artist}"
+                Placeholder="{Binding Artist}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                />
+        </StackLayout>
+        
+        <Label
+            Text="{Binding Path, StringFormat='Path: {0}'}"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            />
+    </VerticalStackLayout>
+</ContentPage>

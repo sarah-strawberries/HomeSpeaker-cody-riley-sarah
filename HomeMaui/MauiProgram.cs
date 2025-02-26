@@ -38,6 +38,9 @@ namespace HomeMaui {
             builder.Services.AddSingleton<Streams>();
             builder.Services.AddSingleton<StreamsVM>();
 
+            builder.Services.AddSingleton<SongPage>();
+            builder.Services.AddSingleton<SongViewModel>();
+
             return builder.Build();
         }
     }
