@@ -1,4 +1,7 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using HomeMaui.Services;
+using HomeMaui.ViewModels;
+using HomeMaui.Views;
+using Microsoft.Extensions.Logging;
 
 namespace HomeMaui {
     public static class MauiProgram {
@@ -14,6 +17,10 @@ namespace HomeMaui {
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+
+            builder.Services.AddSingleton<HomeSpeakerService>();
+            builder.Services.AddSingleton<GetYoutubeSong>();
+            builder.Services.AddSingleton<YoutubeViewModel>();
 
             return builder.Build();
         }
