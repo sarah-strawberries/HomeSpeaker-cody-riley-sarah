@@ -5,8 +5,17 @@
              Title="GetYoutubeSong">
     <VerticalStackLayout>
         <Label 
-            Text="Welcome to .NET MAUI!"
+            Text="YouTube Search"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Entry 
+                Text="{Binding searchText}"
+                Placeholder="Enter search term"
+                WidthRequest="200" />
+            <Button
+                Text="Search"
+                Command="{Binding SearchYoutubeCommand}" />
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>
