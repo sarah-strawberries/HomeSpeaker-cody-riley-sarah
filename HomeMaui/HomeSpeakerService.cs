@@ -21,7 +21,7 @@ public class HomeSpeakerService
     public HomeSpeakerService(IConfiguration config, ILogger<HomeSpeakerService> logger)
     {
         //string address = config["ServerAddress"] ?? throw new MissingConfigException("ServerAddress");
-        string address = "http://localhost:5000";
+        string address = "https://localhost:7238/"; 
         logger.LogInformation($"I was about to use {address}");
         //address = hostEnvironment.BaseAddress;
         //logger.LogInformation("But instead I'll use {address}", address);
