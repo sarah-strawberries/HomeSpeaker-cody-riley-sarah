@@ -19,8 +19,24 @@ namespace HomeMaui {
 #endif
 
             builder.Services.AddSingleton<HomeSpeakerService>();
+
             builder.Services.AddSingleton<GetYoutubeSong>();
             builder.Services.AddSingleton<YoutubeViewModel>();
+
+            builder.Services.AddSingleton<Activity>();
+            builder.Services.AddSingleton<ActivityVM>();
+
+            builder.Services.AddSingleton<Folders>();
+            builder.Services.AddSingleton<FoldersVM>();
+
+            builder.Services.AddSingleton<Playlists>();
+            builder.Services.AddSingleton<PlaylistsVM>();
+
+            builder.Services.AddSingleton<Queue>();
+            builder.Services.AddSingleton<QueueVM>();
+
+            builder.Services.AddSingleton<Streams>();
+            builder.Services.AddSingleton<StreamsVM>();
 
             return builder.Build();
         }
