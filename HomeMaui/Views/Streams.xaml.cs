@@ -1,4 +1,4 @@
-namespace HomeSpeaker.BlazorMaui.Views;
+namespace HomeMaui.Views;
 
 public partial class Streams : ContentPage
 {
