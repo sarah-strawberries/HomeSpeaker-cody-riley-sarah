@@ -18,12 +18,13 @@ public class HomeSpeakerService
     public IEnumerable<SongMessage> Songs => songs;
     public event EventHandler QueueChanged;
 
-    public HomeSpeakerService(IConfiguration config, ILogger<HomeSpeakerService> logger, IWebAssemblyHostEnvironment hostEnvironment)
+    public HomeSpeakerService(IConfiguration config, ILogger<HomeSpeakerService> logger)
     {
-        string address = config["ServerAddress"] ?? throw new MissingConfigException("ServerAddress");
+        //string address = config["ServerAddress"] ?? throw new MissingConfigException("ServerAddress");
+        string address = "https://localhost:7238/"; 
         logger.LogInformation($"I was about to use {address}");
-        address = hostEnvironment.BaseAddress;
-        logger.LogInformation("But instead I'll use {address}", address);
+        //address = hostEnvironment.BaseAddress;
+        //logger.LogInformation("But instead I'll use {address}", address);
         var channel = GrpcChannel.ForAddress(address, new GrpcChannelOptions
         {
             HttpHandler = new GrpcWebHandler(new HttpClientHandler())

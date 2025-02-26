@@ -8,14 +8,13 @@
             Text="YouTube Search"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        <HorizontalStackLayout>
-            <Entry 
-                Text="{Binding searchText}"
-                Placeholder="Enter search term"
-                WidthRequest="200" />
-            <Button
-                Text="Search"
-                Command="{Binding SearchYoutubeCommand}" />
-        </HorizontalStackLayout>
+        <Entry 
+            Text="{Binding SearchText}"
+            Placeholder="Enter search term"
+            WidthRequest="500" />
+        <Button
+            Text="Search"
+            Command="{Binding SearchYoutubeCommand}" 
+            WidthRequest="500"/>
     </VerticalStackLayout>
 </ContentPage>

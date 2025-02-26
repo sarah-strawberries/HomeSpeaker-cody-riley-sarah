@@ -4,7 +4,7 @@ namespace HomeMaui.Views;
 
 public partial class GetYoutubeSong : ContentPage
 {
-	public GetYoutubeSong(YoutubeViewModel vm)
+	public GetYoutubeSong(YoutubeVM vm)
 	{
 		InitializeComponent();
         BindingContext = vm;
