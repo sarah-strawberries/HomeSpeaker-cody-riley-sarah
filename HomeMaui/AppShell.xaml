@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:HomeMaui"
+    xmlns:views="clr-namespace:HomeMaui.Views"
     Shell.FlyoutBehavior="Flyout"
     Title="HomeMaui">
 
@@ -11,5 +12,29 @@
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+    <ShellContent
+        Title="Activity"
+        ContentTemplate="{DataTemplate views:Activity}"
+        Route="Activity" />
+    <ShellContent
+        Title="Folders"
+        ContentTemplate="{DataTemplate views:Folders}"
+        Route="Folders" />
+    <ShellContent
+        Title="Get Youtube"
+        ContentTemplate="{DataTemplate views:GetYoutubeSong}"
+        Route="GetYoutubeSong" />
+    <ShellContent
+        Title="Playlists"
+        ContentTemplate="{DataTemplate views:Playlists}"
+        Route="Playlists" />
+    <ShellContent
+        Title="Queue"
+        ContentTemplate="{DataTemplate views:Queue}"
+        Route="Queue" />
+    <ShellContent
+        Title="Streams"
+        ContentTemplate="{DataTemplate views:Streams}"
+        Route="Streams" />
 
 </Shell>
