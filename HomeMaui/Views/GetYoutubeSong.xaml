@@ -3,58 +3,61 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeMaui.Views.GetYoutubeSong"
              Title="GetYoutubeSong">
-    <VerticalStackLayout>
-        <Label 
-            Text="YouTube Search"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Entry 
-            Text="{Binding SearchText}"
-            Placeholder="Enter search term"
-            WidthRequest="500" />
-        <Button
-            Text="Search"
-            Command="{Binding SearchYoutubeCommand}" 
-            WidthRequest="500"/>
+    <ScrollView>
 
-        <CollectionView
-            ItemsSource="{Binding Songs}">
+        <VerticalStackLayout>
+            <Label 
+                Text="YouTube Search"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Entry 
+                Text="{Binding SearchText}"
+                Placeholder="Enter search term"
+                WidthRequest="500" />
+            <Button
+                Text="Search"
+                Command="{Binding SearchYoutubeCommand}" 
+                WidthRequest="500"/>
 
-            <CollectionView.ItemsLayout>
-                <GridItemsLayout Orientation="Vertical" Span="1" />
-            </CollectionView.ItemsLayout>
+            <CollectionView
+                ItemsSource="{Binding Songs}">
 
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Grid Padding="10">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto" />
-                            <ColumnDefinition Width="*" />
-                        </Grid.ColumnDefinitions>
-                        <Image 
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            Grid.RowSpan="2"
-                            Source="{Binding Thumbnail}" 
-                            HeightRequest="100" 
-                            WidthRequest="100" />
-                        <Label 
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            Text="{Binding Title}" 
-                            FontAttributes="Bold" />
-                        <Label 
-                            Grid.Row="1"
-                            Grid.Column="1"
-                            Text="{Binding Author}" 
-                            FontAttributes="Italic" />
-                    </Grid>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>  
-        </CollectionView>
-    </VerticalStackLayout>
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Grid.RowSpan="2"
+                                Source="{Binding Thumbnail}" 
+                                HeightRequest="100" 
+                                WidthRequest="100" />
+                            <Label 
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding Title}" 
+                                FontAttributes="Bold" />
+                            <Label 
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="{Binding Author}" 
+                                FontAttributes="Italic" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
