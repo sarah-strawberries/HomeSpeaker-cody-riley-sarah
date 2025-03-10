@@ -35,6 +35,7 @@ public partial class StreamsVM(HomeSpeakerService service) : ObservableObject {
 
     [RelayCommand]
     private async Task StartStream(string streamID) {
-        await service.PlayStreamAsync(StreamLinks[streamID]);
+        //await service.PlayStreamAsync(StreamLinks[streamID]);
+        await service.PlayStreamAsync("https://nmcdn-lds.msvdn.net/icecastRelay/101156/GvaVK70/icecast?rnd=637109878513586401");
     }
 }
