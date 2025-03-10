@@ -2,15 +2,41 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeMaui.Views.Streams"
+             xmlns:local="clr-namespace:HomeMaui.ViewModels"
+             x:DataType="local:StreamsVM"
+             BindingContext="{Binding Source={RelativeSource Self}, Path=BindingContext}"
              Title="Streams">
-    <VerticalStackLayout>
-        <Label 
-            Text="Stream List"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-        <Label
-            Text="This contains some internet radio streams. Click to play them in your native player."
-            Padding="5"/>
-        
-    </VerticalStackLayout>
+    <ScrollView>
+        <VerticalStackLayout>
+
+            <Label 
+                Text="Stream List"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+            <Label
+                Text="This contains some internet radio streams. Click to play them in your native player."
+                Padding="5"/>
+
+            <CollectionView
+                ItemsSource="{Binding StreamLinks}">
+
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="1" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <VerticalStackLayout Padding="5">
+                            <Button
+                                Text="{Binding Path=Key}"
+                                Command="{Binding x:DataType='local:StreamsVM', Source={RelativeSource AncestorType={x:Type local:StreamsVM}}, Path=StartStreamCommand}"
+                                CommandParameter="{Binding Path=Key}"
+                                WidthRequest="300"/>
+                        </VerticalStackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
