@@ -20,6 +20,9 @@ namespace HomeMaui {
 
             builder.Services.AddSingleton<HomeSpeakerService>();
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainPageVM>();
+
             builder.Services.AddSingleton<GetYoutubeSong>();
             builder.Services.AddSingleton<YoutubeVM>();
 
