@@ -29,7 +29,6 @@
                         <VerticalStackLayout Padding="5">
                             <Button
                                 Text="{Binding Key}"
-                                TextColor="Black"
                                 Command="{Binding x:DataType='local:StreamsVM', Source={RelativeSource AncestorType={x:Type local:StreamsVM}}, Path=StartStreamCommand}"
                                 CommandParameter="{Binding Key}"
                                 WidthRequest="300"/>
