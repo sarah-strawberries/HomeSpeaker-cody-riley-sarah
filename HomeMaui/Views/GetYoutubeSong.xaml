@@ -13,11 +13,11 @@
             <Entry 
                 Text="{Binding SearchText}"
                 Placeholder="Enter search term"
-                WidthRequest="500" />
+                WidthRequest="200" />
             <Button
                 Text="Search"
                 Command="{Binding SearchYoutubeCommand}" 
-                WidthRequest="500"/>
+                WidthRequest="200"/>
 
             <CollectionView
                 ItemsSource="{Binding Songs}">
@@ -28,7 +28,8 @@
 
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="10">
+                        <Grid Padding="10"
+                              BackgroundColor="LightGrey">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
@@ -43,17 +44,20 @@
                                 Grid.RowSpan="2"
                                 Source="{Binding Thumbnail}" 
                                 HeightRequest="100" 
-                                WidthRequest="100" />
+                                WidthRequest="100"
+                                BackgroundColor="White"/>
                             <Label 
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Text="{Binding Title}" 
-                                FontAttributes="Bold" />
+                                FontAttributes="Bold"
+                                BackgroundColor="White"/>
                             <Label 
                                 Grid.Row="1"
                                 Grid.Column="1"
                                 Text="{Binding Author}" 
-                                FontAttributes="Italic" />
+                                FontAttributes="Italic" 
+                                BackgroundColor="White"/>
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
