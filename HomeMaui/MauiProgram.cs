@@ -44,6 +44,9 @@ namespace HomeMaui {
             builder.Services.AddSingleton<SongPage>();
             builder.Services.AddSingleton<SongViewModel>();
 
+            builder.Services.AddSingleton<Settings>();
+            builder.Services.AddSingleton<SettingsVM>();
+
             return builder.Build();
         }
     }

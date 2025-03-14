@@ -37,6 +37,13 @@ public class HomeSpeakerService
 
     public HomeSpeakerClient HomeSpeakerClient => client;
 
+    public void UpdateClient(string newAddress) {
+        var channel = GrpcChannel.ForAddress(newAddress, new GrpcChannelOptions {
+            HttpHandler = new GrpcWebHandler(new HttpClientHandler())
+        });
+        client = new HomeSpeakerClient(channel);
+    }
+
     private async Task listenForEvents()
     {
         var eventReply = client.SendEvent(new Google.Protobuf.WellKnownTypes.Empty());

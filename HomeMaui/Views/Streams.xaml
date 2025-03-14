@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeMaui.Views.Streams"
              xmlns:local="clr-namespace:HomeMaui.ViewModels"
-             x:DataType="local:StreamsVM"
              BindingContext="{Binding Source={RelativeSource Self}, Path=BindingContext}"
              Title="Streams">
     <ScrollView>

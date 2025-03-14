@@ -40,4 +40,9 @@
         Title="Temporary link to song page"
         ContentTemplate="{DataTemplate views:SongPage}"
         Route="SongPage" />
+    <ShellContent
+        Title="Settings"
+        ContentTemplate="{DataTemplate views:Settings}"
+        Route="Settings" />
+    
 </Shell>
