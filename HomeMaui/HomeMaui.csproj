@@ -91,6 +91,9 @@
 	  <MauiXaml Update="Views\GetYoutubeSong.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Settings.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Views\SongPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
