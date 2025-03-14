@@ -21,8 +21,8 @@
         ContentTemplate="{DataTemplate views:Folders}"
         Route="Folders" />
     <ShellContent
-        Title="Youtube"
-        ContentTemplate="{DataTemplate views:GetYoutubeSong}"
+        Title="YouTube"
+        ContentTemplate="{DataTemplate views:GetYouTubeSong}"
         Route="GetYoutubeSong" />
     <ShellContent
         Title="Playlists"

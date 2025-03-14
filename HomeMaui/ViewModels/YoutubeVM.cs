@@ -1,15 +1,12 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Grpc.Core;
 using HomeMaui.Services;
 using HomeSpeaker.Shared;
-using Microsoft.Extensions.Logging;
 using System.Collections.ObjectModel;
-using System.Runtime.Intrinsics.Arm;
 
 namespace HomeMaui.ViewModels;
 
-public partial class YoutubeVM : ObservableObject {
+public partial class YouTubeVM : ObservableObject {
     private readonly HomeSpeakerService service;
 
     [ObservableProperty]
@@ -18,11 +15,8 @@ public partial class YoutubeVM : ObservableObject {
     [ObservableProperty]
     private ObservableCollection<Video> songs;
 
-    [ObservableProperty]
-    private double progressValue = 0.0;
 
-
-    public YoutubeVM(HomeSpeakerService service) {
+    public YouTubeVM(HomeSpeakerService service) {
         this.service = service;
         SearchText = string.Empty;
         songs = new ObservableCollection<Video>();
@@ -38,14 +32,5 @@ public partial class YoutubeVM : ObservableObject {
         foreach (Video song in videos) {
             Songs.Add(song);
         }
-    }
-
-    [RelayCommand]
-    public async Task CacheVideo(Video SearchResult) {
-        var cacheCallReply = service.HomeSpeakerClient.CacheVideo(new CacheVideoRequest { Video = SearchResult });
-        await foreach (var reply in cacheCallReply.ResponseStream.ReadAllAsync()) {
-            ProgressValue = reply.PercentComplete;
-        }
-        ProgressValue = 1;
     }
 }
