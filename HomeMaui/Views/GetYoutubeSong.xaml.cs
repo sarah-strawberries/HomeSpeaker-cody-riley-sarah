@@ -2,9 +2,9 @@ using HomeMaui.ViewModels;
 
 namespace HomeMaui.Views;
 
-public partial class GetYoutubeSong : ContentPage
+public partial class GetYouTubeSong : ContentPage
 {
-	public GetYoutubeSong(YoutubeVM vm)
+	public GetYouTubeSong(YouTubeVM vm)
 	{
 		InitializeComponent();
         BindingContext = vm;

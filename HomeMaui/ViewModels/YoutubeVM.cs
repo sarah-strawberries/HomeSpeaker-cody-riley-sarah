@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace HomeMaui.ViewModels;
 
-public partial class YoutubeVM : ObservableObject {
+public partial class YouTubeVM : ObservableObject {
     private readonly HomeSpeakerService service;
 
     [ObservableProperty]
@@ -16,7 +16,7 @@ public partial class YoutubeVM : ObservableObject {
     private ObservableCollection<Video> songs;
 
 
-    public YoutubeVM(HomeSpeakerService service) {
+    public YouTubeVM(HomeSpeakerService service) {
         this.service = service;
         SearchText = string.Empty;
         songs = new ObservableCollection<Video>();

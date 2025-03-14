@@ -10,7 +10,8 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         
-        <HorizontalStackLayout
+        <FlexLayout
+            JustifyContent="SpaceAround"
             WidthRequest="700"
             IsVisible="{Binding IsEditable}">
             <Entry
@@ -26,7 +27,7 @@
                 Command="{Binding SaveCommand}"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
-        </HorizontalStackLayout>
+        </FlexLayout>
         
         <CollectionView
             ItemsSource="{Binding Links}">

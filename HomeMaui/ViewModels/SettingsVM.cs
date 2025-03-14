@@ -33,7 +33,7 @@ public partial class SettingsVM : ObservableObject {
         if (Url != string.Empty) {
             IsEditable = false;
             service.UpdateClient(Url);
-            Links.Add(new Tuple<string, string>(Name, Url)); // Don't worry about it
+            Links.Add(new Tuple<string, string>(Name, Url)); // This line is not updating the property properly
             Name = string.Empty;
             Url = string.Empty;
         } else {
