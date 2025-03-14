@@ -1,40 +1,40 @@
-﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using HomeSpeaker.Shared;
+using HomeMaui.Services;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 
-using HomeMaui.Services;
-using CommunityToolkit.Mvvm.ComponentModel;
-using System.Collections.ObjectModel;
-using HomeSpeaker.Shared;
-
 namespace HomeMaui.ViewModels {
-    public class PlaylistsVM {
-        //probably am doing this wrong but I need a HomeSpeakerService
-        public HomeSpeakerService _hs;
+    public partial class PlaylistsVM : ObservableObject {
+        private readonly HomeSpeakerService _hs;
+
+        [ObservableProperty]
+        private bool isLoading;
+
+        public ObservableCollection<Playlist> Playlists { get; } = new();
+
         public PlaylistsVM(HomeSpeakerService hs) {
             _hs = hs;
+            LoadPlaylistsCommand = new AsyncRelayCommand(LoadPlaylists);
+            LoadPlaylists(); 
         }
-        //doesn't work and don't know why
 
-        //[ObservableProperty]
-        //private ObservableCollection<Song> _songs = [];
+        public IAsyncRelayCommand LoadPlaylistsCommand { get; }
 
-        //[ObservableProperty]
-        //private ObservableCollection<Playlist> _playlists = [];
+        private async Task LoadPlaylists() {
+            if (IsLoading) return;
+            IsLoading = true;
 
-
-        //public partial class Playlists : ObservableObject {
-
-        //}
-
-        //public partial class Songs : ObservableObject {
-        //    Song song;
-        //}
+            try {
+                var playlists = await _hs.GetPlaylistsAsync();
+                Playlists.Clear();
+                foreach (var playlist in playlists) {
+                    Playlists.Add(playlist);
+                }
+            } finally {
+                IsLoading = false;
+            }
+        }
     }
-
-
-
 }

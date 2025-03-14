@@ -9,4 +9,21 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
     </VerticalStackLayout>
+    <StackLayout Padding="10">
+        <Label Text="Playlists" FontSize="24" HorizontalOptions="Center" />
+
+        <!-- Loading indicator -->
+        <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}" />
+
+        <!-- Playlist items -->
+        <CollectionView ItemsSource="{Binding Playlists}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5" BackgroundColor="#eeeeee" CornerRadius="10">
+                        <Label Text="{Binding Name}" FontSize="18" />
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
 </ContentPage>
