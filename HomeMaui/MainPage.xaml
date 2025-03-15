@@ -4,17 +4,82 @@
              x:Class="HomeMaui.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout>
+        <Grid
+            ColumnSpacing="10" RowSpacing="10" Padding="10"
+            ColumnDefinitions="*,*"
+            RowDefinitions="*,*,*,*">
             <Label
                 Text="Navigation" />
 
             <Button 
                 Text="Streams"
                 Command="{Binding MovePageCommand}"
-                CommandParameter="Streams"/>
+                CommandParameter="Streams"
+                BackgroundColor="#aa2222"
+                TextColor="White"
+                Grid.Row="0" Grid.Column="0" />
+
+            <Button 
+                Text="Download YouTube"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Youtube"
+                BackgroundColor="DarkOrange"
+                TextColor="White"
+                Grid.Row="0" Grid.Column="1" />
+
+            <!-- Second Row -->
+            <Button 
+                Text="Activity"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Activity"
+                BackgroundColor="#fcd12a"
+                TextColor="Black"
+                Grid.Row="1" Grid.Column="0" />
+
+            <Button 
+                Text="Folders"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Folders"
+                BackgroundColor="Green"
+                TextColor="White"
+                Grid.Row="1" Grid.Column="1" />
+
+            <!-- Third Row -->
+            <Button 
+                Text="Playlists"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Playlists"
+                BackgroundColor="#222299"
+                TextColor="White"
+                Grid.Row="2" Grid.Column="0" />
+
+            <Button 
+                Text="Queue"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Queue"
+                BackgroundColor="Purple"
+                TextColor="White"
+                Grid.Row="2" Grid.Column="1" />
+
+            <!-- Fourth Row -->
+            <Button 
+                Text="Settings"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="Settings"
+                BackgroundColor="#BF1493" 
+                TextColor="White"
+                Grid.Row="3" Grid.Column="0" />
+
+            <Button 
+                Text="Songs"
+                Command="{Binding MovePageCommand}"
+                CommandParameter="SongPage"
+                BackgroundColor="#4B0082"  
+                    TextColor="White"
+                Grid.Row="3" Grid.Column="1" />
             <!---Add more here as necessary-->
 
-        </VerticalStackLayout>
+        </Grid>
     </ScrollView>
 
 </ContentPage>
