@@ -11,25 +11,6 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <FlexLayout
-            JustifyContent="SpaceAround"
-            WidthRequest="700"
-            IsVisible="{Binding IsEditable}">
-            <Entry
-                Placeholder="Server Name"
-                Text="{Binding Name}"
-                />
-            <Entry
-                Placeholder="Server URL"
-                Text="{Binding Url}"
-                />
-            <Button
-                Text="Save"
-                Command="{Binding SaveCommand}"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
-        </FlexLayout>
-
         <CollectionView
             ItemsSource="{Binding Links}">
             <CollectionView.ItemTemplate>
@@ -58,6 +39,29 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        
+        
+        <FlexLayout
+            JustifyContent="SpaceAround"
+            WidthRequest="700"
+            IsVisible="{Binding IsEditable}">
+            <Entry
+                Placeholder="Server Name"
+                Text="{Binding Name}"
+                />
+            <Entry
+                Placeholder="Server URL"
+                Text="{Binding Url}"
+                />
+            <Button
+                Text="Save"
+                Command="{Binding SaveCommand}"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+        </FlexLayout>
+
+        
+        
         <Button
             Text="Add New Link"
             Command="{Binding AllowEditCommand}"
