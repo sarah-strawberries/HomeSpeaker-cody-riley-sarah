@@ -19,6 +19,7 @@ namespace HomeMaui {
 #endif
 
             builder.Services.AddSingleton<HomeSpeakerService>();
+            builder.Services.AddSingleton<PersistenceService>();
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainPageVM>();

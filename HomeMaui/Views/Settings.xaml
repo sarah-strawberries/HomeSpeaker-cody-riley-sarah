@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeMaui.Views.Settings"
+             xmlns:local="clr-namespace:HomeMaui.ViewModels"
              Title="Settings">
 
     <VerticalStackLayout>
@@ -9,7 +10,7 @@
             Text="Server Selector"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-        
+
         <FlexLayout
             JustifyContent="SpaceAround"
             WidthRequest="700"
@@ -28,7 +29,7 @@
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" />
         </FlexLayout>
-        
+
         <CollectionView
             ItemsSource="{Binding Links}">
             <CollectionView.ItemTemplate>
@@ -41,6 +42,18 @@
                         <Label
                             Text="{Binding Item2}"
                             FontSize="Medium" />
+                        <Button
+                            Text="Assign to Client"
+                            Command="{Binding x:DataType='local:SettingsVM', Source={RelativeSource AncestorType={x:Type local:SettingsVM}}, Path=UpdateClientCommand}"
+                            CommandParameter="{Binding Item2}"
+                            />
+                        <Button
+                            Text="Remove"
+                            Command="{Binding x:DataType='local:SettingsVM', Source={RelativeSource AncestorType={x:Type local:SettingsVM}}, Path=RemoveLinkCommand}"
+                            CommandParameter="{Binding}"
+                            BackgroundColor="Red"
+                            TextColor="White"
+                            />
                     </FlexLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
