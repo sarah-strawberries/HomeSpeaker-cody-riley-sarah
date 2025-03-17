@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="HomeMaui.Views.Playlists"
              Title="Playlists">
-    <VerticalStackLayout>
+    
+    
+    <StackLayout Padding="10">
         <Label 
             Text="Make and access playlists"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
-    </VerticalStackLayout>
-    <StackLayout Padding="10">
         <Label Text="Playlists" FontSize="24" HorizontalOptions="Center" />
 
         <!-- Loading indicator -->

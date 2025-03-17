@@ -22,7 +22,7 @@
             <Button 
                 Text="Download YouTube"
                 Command="{Binding MovePageCommand}"
-                CommandParameter="Youtube"
+                CommandParameter="GetYoutubeSong"
                 BackgroundColor="DarkOrange"
                 TextColor="White"
                 Grid.Row="0" Grid.Column="1" />
