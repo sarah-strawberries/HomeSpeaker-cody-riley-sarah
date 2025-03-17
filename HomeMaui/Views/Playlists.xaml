@@ -19,9 +19,9 @@
         <CollectionView ItemsSource="{Binding Playlists}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Frame Padding="10" Margin="5" BackgroundColor="#eeeeee" CornerRadius="10">
+                    <Border Padding="10" Margin="5" BackgroundColor="#eeeeee">
                         <Label Text="{Binding Name}" FontSize="18" />
-                    </Frame>
+                    </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

@@ -1,12 +1,50 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:HomeMaui.ViewModels"
+
              x:Class="HomeMaui.Views.Queue"
              Title="Queue">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+
+    <VerticalStackLayout Padding="10">
+        <!-- Current Song -->
+        <Label Text="Now Playing:" FontSize="16" />
+        <Label Text="{Binding CurrentSong}" FontSize="20" FontAttributes="Bold" />
+
+        <!-- Volume Slider -->
+        <Label Text="Volume Level:" FontSize="14" />
+        <Slider Minimum="0" Maximum="100" 
+                Value="{Binding VolumeLevel, Mode=TwoWay}" />
+
+        <!-- Save Playlist Button -->
+        <Button Text="Save as Playlist"
+                Command="{Binding SaveQueueCommand}"
+                Margin="0,10" />
+
+        <!-- Song Queue -->
+        <Label Text="Queue (drag and drop to reorder):" FontSize="16" FontAttributes="Bold" />
+        <CollectionView ItemsSource="{Binding Queue}" 
+                        SelectionMode="None"
+                        VerticalScrollBarVisibility="Always"
+                        
+                        ItemsLayout="VerticalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border Padding="10" Margin="5" BackgroundColor="#eeeeee">
+                        <HorizontalStackLayout>
+                            <Label Text="{Binding Name}" FontSize="16" VerticalOptions="Center" />
+                            <Button Text="✖"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewModels:QueueVM}}, Path=RemoveFromQueueCommand}"
+                                    CommandParameter="{Binding .}"
+                                    VerticalOptions="Center"
+                                    BackgroundColor="Transparent"
+                                    TextColor="Red"
+                                    Margin="5,0,0,0" />
+                        </HorizontalStackLayout>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
     </VerticalStackLayout>
 </ContentPage>
